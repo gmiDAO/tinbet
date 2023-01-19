@@ -20,7 +20,9 @@
     "@solana/wallet-adapter-wallets": "^0.19.5",
     "@solana/web3.js": "^1.66.2",
     "@tailwindcss/typography": "^0.4.1",
+    "@types/bs58": "^4.0.1",
     "@types/lodash.orderby": "^4.6.6",
+    "@types/react-dom": "^18.0.10",
     "daisyui": "^1.16.2",
     "framer-motion": "^8.4.3",
     "lodash.orderby": "^4.6.0",
@@ -31,13 +33,13 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@types/react": "17.0.34",
+    "@types/react": "^18.0.27",
     "@types/react-alert": "^5.2.1",
     "autoprefixer": "^10.4.0",
     "eslint": "7",
     "eslint-config-next": "12.0.3",
     "postcss": "^8.3.11",
     "tailwindcss": "^2.2.19",
-    "typescript": "4.4.4"
+    "typescript": "^4.7.3"
   }
 }
