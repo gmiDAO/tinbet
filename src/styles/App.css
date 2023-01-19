@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
+  display: flex;
+}
+
+#__next {
+  flex: 1 1 auto;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.close-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: block;
+  background: #000;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 17px;
+  text-decoration: none;
+  border: none;
+}
+.modal-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #000000ad;
+  height: 100vh;
+  z-index: 9999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-container {
+  width: 95%;
+  max-width: 550px;
+  position: relative;
+  overflow-y: initial !important;
+  border-radius: 10px;
+}
+.modal-content {
+  padding: 25px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
