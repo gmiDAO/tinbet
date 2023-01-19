@@ -1,4 +1,4 @@
-# Tindbet Web dApp with Next.JS
+# Tinbet Web dApp with Next.JS
 
 ## Add environment variables
 
