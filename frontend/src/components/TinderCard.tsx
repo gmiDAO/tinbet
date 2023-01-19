@@ -8,7 +8,7 @@ import {
 
 export type TinderCard = {
   image: string;
-  text: string;
+  title: string;
   id: number;
   data: any;
 };
@@ -126,7 +126,7 @@ export const TinderCard = ({ card, onSwipe, onSkip }: TinderCardProps) => {
         }}
       >
         <div className="text-center text-black m-4">
-          <h1 className="text-2xl font-bold">{card.text}</h1>
+          <h1 className="text-2xl font-bold">{card.title}</h1>
         </div>
         <div className="avatar flex justify-center">
           <div className="w-24 mask mask-squircle">

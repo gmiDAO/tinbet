@@ -1,7 +1,6 @@
 import {
   getMarketAccountsByStatusAndMintAccount,
   getMarketPrices,
-  getMintInfo,
   MarketStatus,
   createOrder,
   GetAccount,
@@ -9,69 +8,108 @@ import {
   ClientResponse,
   MarketAccounts,
   MarketPricesAndPendingOrders,
-  MarketPrices,
 } from "@monaco-protocol/client";
 import { Program } from "@project-serum/anchor";
 import { PublicKey } from "@solana/web3.js";
 import { BN } from "@project-serum/anchor";
-import { ProgramConnectedState } from "contexts/ProgramProvider";
+import { getProgram } from "../utils/solana";
+import { Environment } from "../types";
+import { MarketData, ChosenOutcome, Bet, MarketCard } from "./types";
 
 // const mintToken = "Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH";
 const mintToken = "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB";
 const mintDecimals = 6;
 const marketsStatus = MarketStatus.Open;
 
-export const getMarkets = async (program: Program) => {
+export const getMarketsAddresses = async (
+  env: Environment
+): Promise<string[] | null> => {
+  const program = await getProgram(env);
   const marketsResponse: ClientResponse<MarketAccounts> =
     await getMarketAccountsByStatusAndMintAccount(
       program,
       marketsStatus,
       new PublicKey(mintToken)
     );
-
-  const marketsData: any[] = [];
   if (marketsResponse.success && marketsResponse.data) {
-    //Only get an open market with a non-zero marketOutcomesCount
-    const marketsWithOutcomes = marketsResponse.data.markets.filter(
-      (market) => market.account.marketOutcomesCount > 0
+    //Only get an open market with onlye between 2 and 3 outcomes
+    const validMarketsAddresses = marketsResponse.data.markets.reduce(
+      (validMarkets: string[], market: GetAccount<MarketAccount>) => {
+        if (
+          market.account.marketOutcomesCount >= 2 &&
+          market.account.marketOutcomesCount <= 3
+        ) {
+          validMarkets.push(market.publicKey.toString());
+        }
+        return validMarkets;
+      },
+      []
     );
-    for (let i = 0; i < 5; i++) {
-      let marketPk = marketsWithOutcomes[i].publicKey;
-      let marketPricesData = await getMarketOutcomePriceData(program, marketPk);
-      if (!marketPricesData) {
-        continue;
-      }
-      const marketData = {
-        pk: marketPk.toString(),
-        market: marketsWithOutcomes[i],
-        prices: marketPricesData,
-      };
-      console.log("marketData!!!", marketData);
-      marketsData.push(marketData);
-    }
-  }
-  return marketsData;
-};
-
-export const getMarketOutcomePriceData = async (
-  program: Program,
-  marketPk: PublicKey
-) => {
-  console.log("marketPk", marketPk.toString());
-  let marketPricesResponse: ClientResponse<MarketPricesAndPendingOrders> =
-    await getMarketPrices(program, marketPk);
-  console.log("marketPricesResponse", marketPricesResponse);
-  if (marketPricesResponse.success && marketPricesResponse.data) {
-    return getBestMarketOutcomeWithOdd(marketPricesResponse.data);
+    return validMarketsAddresses;
   }
   return null;
 };
 
-const getBestMarketOutcomeWithOdd = (
-  marketPricesAndPendingOrders: MarketPricesAndPendingOrders
+export const getMarketCard = async (
+  marketAddress: string,
+  env: Environment
+): Promise<MarketCard | null> => {
+  try {
+    const program = await getProgram(env);
+    const marketPk = new PublicKey(marketAddress);
+    let chosenOutcome = await getMarketOutcomePriceData(program, marketPk);
+    if (chosenOutcome) {
+      const marketData = {
+        pk: marketPk.toString(),
+        outcome: chosenOutcome,
+      };
+      return buildMarketCard(marketData);
+    }
+  } catch (e) {
+    console.log("Error getting market data", e);
+  }
+};
+
+export const placeBet = async (
+  program: Program,
+  market: GetAccount<MarketAccount>,
+  bet: Bet
 ) => {
+  try {
+    const stakeInteger = new BN(bet.stake * 10 ** mintDecimals);
+
+    const createOrderResponse = await createOrder(
+      program,
+      market.publicKey,
+      bet.marketOutcomeIndex,
+      bet.forOutcome,
+      bet.odds,
+      stakeInteger
+    );
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+const getMarketOutcomePriceData = async (
+  program: Program,
+  marketPk: PublicKey
+): Promise<ChosenOutcome | null> => {
+  let marketPricesResponse: ClientResponse<MarketPricesAndPendingOrders> =
+    await getMarketPrices(program, marketPk);
+  console.log(marketPricesResponse);
+  if (marketPricesResponse.success && marketPricesResponse.data) {
+    return parsedChosenOutcome(marketPricesResponse.data);
+  } else {
+    console.log("Error getting market prices", marketPricesResponse.errors);
+  }
+  return null;
+};
+
+const parsedChosenOutcome = (
+  marketPricesAndPendingOrders: MarketPricesAndPendingOrders
+): ChosenOutcome | null => {
   const { marketPrices } = marketPricesAndPendingOrders;
-  console.log("marketPrices", marketPrices);
 
   let marketOutcomes: any = {};
   for (let i = 0; i < marketPrices.length; i++) {
@@ -103,7 +141,6 @@ const getBestMarketOutcomeWithOdd = (
         marketPrice.price;
     }
   }
-  console.log("marketOutcomes", marketOutcomes);
   if (Object.keys(marketOutcomes).length !== 2) {
     return null;
   }
@@ -126,32 +163,12 @@ const getBestMarketOutcomeWithOdd = (
   return null;
 };
 
-export type Bet = {
-  forOutcome: boolean;
-  marketOutcome: string;
-  marketOutcomeIndex: number;
-  odds: number;
-  stake: number;
-};
-
-export const placeBet = async (
-  program: Program,
-  market: GetAccount<MarketAccount>,
-  bet: Bet
-) => {
-  try {
-    const stakeInteger = new BN(bet.stake * 10 ** mintDecimals);
-
-    const createOrderResponse = await createOrder(
-      program,
-      market.publicKey,
-      bet.marketOutcomeIndex,
-      bet.forOutcome,
-      bet.odds,
-      stakeInteger
-    );
-    console.log(createOrderResponse);
-  } catch (e) {
-    console.error(e);
-  }
+const buildMarketCard = (marketData: MarketData): MarketCard => {
+  const marketCard: MarketCard = {
+    image: "",
+    title: `Is ${marketData.outcome.marketOutcome} gonna make it against ${marketData.outcome.marketOutcomeAgainst}?`,
+    id: marketData.pk,
+    data: marketData,
+  };
+  return marketCard;
 };

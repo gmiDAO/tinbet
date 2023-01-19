@@ -1,0 +1,23 @@
+name="tinbet"
+main="src/index.ts"
+compatibility_date = "2022-11-22"
+node_compat = true
+kv_namespaces = [
+  { binding = "MARKETS", preview_id = "01e6029d89484e32803f6f15d6b16dc9", id = "01e6029d89484e32803f6f15d6b16dc9" }
+]
+
+queues.producers = [
+  { queue = "populate-markets", binding = "POPULATE_MARKETS" }
+]
+
+queues.consumers = [
+  { queue = "populate-markets", max_batch_size = 2, max_batch_timeout = 30, max_retries = 0 }
+]
+
+[triggers]
+crons = ["*/10 * * * *"]
+
+[vars]
+ANCHOR_WALLET="./wallet/example.json"
+ANCHOR_PROVIDER_URL="https://lingering-omniscient-choice.solana-mainnet.discover.quiknode.pro/cb8d910bf1854db2dc4c2e5a3333294e26ae0445/"
+PROTOCOL_TYPE="release"
