@@ -18,6 +18,5 @@ queues.consumers = [
 crons = ["*/10 * * * *"]
 
 [vars]
-ANCHOR_WALLET="./wallet/example.json"
 ANCHOR_PROVIDER_URL="https://lingering-omniscient-choice.solana-mainnet.discover.quiknode.pro/cb8d910bf1854db2dc4c2e5a3333294e26ae0445/"
 PROTOCOL_TYPE="release"

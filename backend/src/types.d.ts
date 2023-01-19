@@ -1,6 +1,5 @@
 export interface Environment {
   readonly MARKETS: KVNamespace;
-  readonly ANCHOR_WALLET: string;
   readonly ANCHOR_PROVIDER_URL: string;
   readonly POPULATE_MARKETS: Queue;
 }

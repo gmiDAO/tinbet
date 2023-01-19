@@ -28,7 +28,7 @@ export default {
   async queue(batch: MessageBatch, env: Environment, ctx: ExecutionContext) {
     for (const message of batch.messages) {
       try {
-        const marketAddress = message.body as string;
+        const marketAddress = JSON.parse(message.body as string);
         const marketCard = await getMarketCard(marketAddress, env);
         if (marketCard) {
           await marketModel.updateMarketCard(env.MARKETS, marketCard);
