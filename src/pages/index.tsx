@@ -3,14 +3,9 @@ import Head from "next/head";
 import { TinderCard } from "components/TinderCard";
 import { useState, useEffect } from "react";
 import { useFetchMarkets } from "lib/markets/hook";
-import { Bet } from "lib/markets/api";
+import { Bet, placeBet } from "lib/markets/api";
 import { useProgram } from "contexts/ProgramProvider";
-import { AnchorProvider, BN, Program } from "@project-serum/anchor";
-import {
-  GetAccount,
-  MarketAccount,
-  createOrder,
-} from "@monaco-protocol/client";
+import { AnchorProvider } from "@project-serum/anchor";
 import { useWallet } from "@solana/wallet-adapter-react";
 
 const HomePage: NextPage = (props) => {
@@ -25,38 +20,16 @@ const HomePage: NextPage = (props) => {
     );
   };
 
-  const placeBet = async (
-    program: Program,
-    market: GetAccount<MarketAccount>,
-    bet: Bet
-  ) => {
-    try {
-      const stakeInteger = new BN(bet.stake * 10 ** 6);
-
-      const createOrderResponse = await createOrder(
-        program,
-        market.publicKey,
-        bet.marketOutcomeIndex,
-        bet.forOutcome,
-        bet.odds,
-        stakeInteger
-      );
-      console.log(createOrderResponse);
-    } catch (e) {
-      console.error(e);
-    }
-  };
-
   const onSwipeHandler = async (direction: "left" | "right", card: any) => {
     // remove the card from the cards array
     removeCard(card);
     console.log("swipe", direction, card);
     const forOutcome = direction === "right";
+    const price =
+      card.data.prices[forOutcome ? "againstOutcomePrice" : "forOutcomePrice"]; // Use the opposite price to match the position
     const bet: Bet = {
       forOutcome: forOutcome,
-      odds: card.data.prices[
-        forOutcome ? "forOutcomePrice" : "againstOutcomePrice"
-      ],
+      odds: price,
       stake: 0.1,
       marketOutcome: card.data.prices.marketOutcome,
       marketOutcomeIndex: card.data.prices.marketOutcomeIndex,
