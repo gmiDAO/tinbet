@@ -1,35 +1,31 @@
-# Support To Earn Solana Dapp with Next.JS
+# Tindbet Web dApp with Next.JS
 
-This project includes:
+## Add environment variables
 
-- Next.JS
-- TypeScript
-- [@solana/wallet-adapter](https://github.com/solana-labs/wallet-adapter) and [@solana/web3.js](https://solana-labs.github.io/solana-web3.js) for interactions with wallets & blockchain.
-- Tailwind CSS (with [daisyUI](https://daisyui.com/))
+Change the values of the following environment variables to your own depending on the network you want to use and the RPC node you want to connect to.
 
-## Getting Started
+Run the following commands in your terminal:
 
-First, run the development server:
+```bash
+export NEXT_PUBLIC_PROGRAM_ID=monacoUXKtUi6vKsQwaLyxmXKSievfNWEcYXTgkbCih
+export NEXT_PUBLIC_NODE=https://api.mainnet-beta.solana.com
+```
+
+or create a `.env.local` file with the following content:
+
+```
+NEXT_PUBLIC_PROGRAM_ID=monacoUXKtUi6vKsQwaLyxmXKSievfNWEcYXTgkbCih
+NEXT_PUBLIC_NODE=https://api.mainnet-beta.solana.com
+```
+
+## Install dependencies
 
 ```bash
 yarn
-yarn run dev
 ```
 
-## Style
+## Run the app locally
 
-[Tailwind CSS](https://tailwindcss.com/) or [daisyUI](https://daisyui.com/) are selected tools for rapid style development.
-
-You can quickly change theme changing `daisy.themes` within `./tailwind.config.js`.
-More info here: https://daisyui.com/docs/default-themes
-
-This app encourage you to use CSS Modules over other style technics (like SASS/LESS, Styled Components, usual CSS).
-It have modular nature and supports modern CSS. [Read more on Next.JS site](https://nextjs.org/docs/basic-features/built-in-css-support).
-Anyway, if you want to connect LESS there is example code in `./next.config.js`
-
-## Deploy on Vercel
-
-Before push run localy `npm run build` to make sure app can be build succesffully on vercel .
-
-Vercel will automatically create environment and deployment for you if you have vercel account connected to your GitHub account. Go to the vercel.com to connect it.
-Then any push to `main` branch will automatically rebuild and redploy app.
+```bash
+yarn dev
+```
