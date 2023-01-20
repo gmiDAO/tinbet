@@ -132,11 +132,14 @@ export const TinderCard = ({
       <div className="flex items-center text-center text-black m-4 h-40">
         <h1 className="text-2xl font-bold">{card.title}</h1>
       </div>
-      {card.image && (
-        <div className="flex items-center justify-center m-4">
-          <Image src={card.image} width={100} height={100} />
-        </div>
-      )}
+
+      <div className="flex items-center justify-center m-4">
+        <Image
+          src={card.image || "/no_image_placeholder.png"}
+          width={100}
+          height={100}
+        />
+      </div>
 
       <div
         style={{
