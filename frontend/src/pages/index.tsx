@@ -49,7 +49,7 @@ const HomePage: NextPage = (props) => {
   return (
     <>
       <Head>
-        <title>🔥 Tindbet</title>
+        <title>Tinbet</title>
       </Head>
 
       {cards.map((card, index) => {
