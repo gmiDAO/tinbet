@@ -124,7 +124,7 @@ export const TinderCard = ({
         x: motionValue,
         height: 500,
         width: 300,
-        boxShadow: "5px 10px 18px #888888",
+        boxShadow: "0px 10px 18px #888888",
         borderRadius: 10,
         backgroundColor: backgroundColor,
       }}
@@ -136,24 +136,17 @@ export const TinderCard = ({
       <div className="flex items-center justify-center m-4">
         <Image
           src={card.image || "/no_image_placeholder.png"}
-          width={100}
-          height={100}
+          width={150}
+          height={150}
         />
       </div>
 
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          margin: "0 20px",
-        }}
-      >
+      <div className="flex items-center justify-between m-4">
         <motion.div
           animate={nopeAnim}
           style={{
             opacity: nopeOpacity,
-            fontSize: 50,
+            fontSize: 30,
             color: "red",
           }}
         >
@@ -163,22 +156,70 @@ export const TinderCard = ({
           animate={yepAnim}
           style={{
             opacity: yepOpacity,
-            fontSize: 50,
+            fontSize: 30,
             color: "green",
           }}
         >
           Yep
         </motion.div>
       </div>
-      <div className="flex justify-center">
-        <button onClick={() => swipeX("left")} className="btn btn-red">
-          Nope
+      <div className="flex justify-between pt-4">
+        <button
+          onClick={() => swipeX("left")}
+          className="btn btn-circle btn-error btn-lg hover:bg-opacity-70"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
         </button>
-        <button onClick={swipeUp} className="btn btn-black">
-          Skip
+        <button
+          onClick={swipeUp}
+          className="btn btn-circle btn-warning btn-lg hover:bg-opacity-70"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
+            />
+          </svg>
         </button>
-        <button onClick={() => swipeX("right")} className="btn btn-green">
-          Yes
+        <button
+          onClick={() => swipeX("right")}
+          className="btn btn-circle btn-success btn-lg hover:bg-opacity-70"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-8 h-8"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+            />
+          </svg>
         </button>
       </div>
     </motion.div>
