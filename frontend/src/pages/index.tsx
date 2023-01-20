@@ -1,10 +1,9 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { TinderCard } from "components/TinderCard";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Bet, getMarketCards, placeBet } from "lib/markets/api";
 import { useProgram } from "contexts/ProgramProvider";
-import { useFetchMarketCards } from "lib/markets/hook";
 import Modal from "components/Modal";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButtonDynamic } from "contexts/SolanaWalletProvider";
