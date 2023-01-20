@@ -6,6 +6,8 @@ import {
   useDragControls,
 } from "framer-motion";
 
+import Image from "next/image";
+
 export type TinderCard = {
   image: string;
   title: string;
@@ -128,11 +130,13 @@ export const TinderCard = ({ card, onSwipe, onSkip }: TinderCardProps) => {
         <div className="text-center text-black m-4">
           <h1 className="text-2xl font-bold">{card.title}</h1>
         </div>
-        <div className="avatar flex justify-center">
-          <div className="w-24 mask mask-squircle">
-            <img src={card.image} />
+        {card.image && (
+          <div className="avatar flex justify-center">
+            <div className="w-24 mask mask-squircle">
+              <Image src={card.image} width={500} height={500} />
+            </div>
           </div>
-        </div>
+        )}
 
         <div
           style={{

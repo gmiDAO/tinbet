@@ -4,6 +4,7 @@ import { Environment, MessageSendRequest } from "./types";
 import { markets } from "./markets/routes";
 import { getMarketCard, getMarketsAddresses } from "./markets/service";
 import * as marketModel from "./markets/model";
+import { OUTCOME_IMAGES } from "./constants";
 const app = new Hono();
 app.use("*", prettyJSON());
 app.get("/", (c) => c.text("Tinbet API"));
@@ -29,8 +30,10 @@ export default {
     for (const message of batch.messages) {
       try {
         const marketAddress = JSON.parse(message.body as string);
-        const marketCard = await getMarketCard(marketAddress, env);
+        let marketCard = await getMarketCard(marketAddress, env);
         if (marketCard) {
+          marketCard.image =
+            OUTCOME_IMAGES[marketCard.data.outcome.marketOutcome] || "";
           await marketModel.updateMarketCard(env.MARKETS, marketCard);
         }
       } catch (e) {

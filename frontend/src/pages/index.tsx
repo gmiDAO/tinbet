@@ -39,9 +39,11 @@ const HomePage: NextPage = (props) => {
   };
 
   useEffect(() => {
-    getMarketCards().then((cards) => {
-      setCards(cards.markets);
-    });
+    if (cards.length === 0) {
+      getMarketCards().then((cards) => {
+        setCards(cards.markets);
+      });
+    }
   }, []);
 
   return (
@@ -52,14 +54,12 @@ const HomePage: NextPage = (props) => {
 
       {cards.map((card, index) => {
         return (
-          <>
-            <TinderCard
-              key={index}
-              card={card}
-              onSwipe={onSwipeHandler}
-              onSkip={onSkipHandler}
-            />
-          </>
+          <TinderCard
+            key={index}
+            card={card}
+            onSwipe={onSwipeHandler}
+            onSkip={onSkipHandler}
+          />
         );
       })}
 

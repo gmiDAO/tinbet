@@ -97,7 +97,6 @@ const getMarketOutcomePriceData = async (
 ): Promise<ChosenOutcome | null> => {
   let marketPricesResponse: ClientResponse<MarketPricesAndPendingOrders> =
     await getMarketPrices(program, marketPk);
-  console.log(marketPricesResponse);
   if (marketPricesResponse.success && marketPricesResponse.data) {
     return parsedChosenOutcome(marketPricesResponse.data);
   } else {
