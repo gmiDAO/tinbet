@@ -14,17 +14,23 @@ export type TinderCard = {
   id: number;
   data: any;
 };
+type SwipeDirection = "left" | "right";
 
 type TinderCardProps = {
   card: TinderCard;
-  onSwipe: (direction: "left" | "right", card: TinderCard) => void;
+  onSwipe: (direction: SwipeDirection, card: TinderCard) => void;
   onSkip: (card: TinderCard) => void;
+  canSwipe?: boolean;
 };
 
-export const TinderCard = ({ card, onSwipe, onSkip }: TinderCardProps) => {
+export const TinderCard = ({
+  card,
+  onSwipe,
+  onSkip,
+  canSwipe,
+}: TinderCardProps) => {
   // To move the card as the user drags the cursor
   const motionValue = useMotionValue(0);
-  const controls = useDragControls();
 
   // To rotate the card as the card moves on drag
   const rotateValue = useTransform(motionValue, [-200, 200], [-50, 50]);
@@ -56,28 +62,25 @@ export const TinderCard = ({ card, onSwipe, onSkip }: TinderCardProps) => {
   // Framer animation hook
   const animControls = useAnimation();
 
-  const swipeLeft = () => {
+  const swipeX = (direction: SwipeDirection) => {
+    let total_transition_time = 200;
+    let newX = direction === "left" ? -200 : 200;
     animControls.start({
-      x: -200,
+      x: newX,
       opacity: 0,
-      transition: { duration: 0.2 },
+      transition: { duration: total_transition_time / 1000 },
     });
+    if (!canSwipe) {
+      // after half transition duration call the bounceBack function
+      total_transition_time += 100;
+      setTimeout(() => {
+        bounceBack();
+      }, 100);
+    }
     // after transition duration call the onSwipe function
     setTimeout(() => {
-      onSwipe("left", card);
-    }, 200);
-  };
-
-  const swipeRight = () => {
-    animControls.start({
-      x: 200,
-      opacity: 0,
-      transition: { duration: 0.2 },
-    });
-    // after transition duration call the onSwipe function
-    setTimeout(() => {
-      onSwipe("right", card);
-    }, 200);
+      onSwipe(direction, card);
+    }, total_transition_time);
   };
 
   const swipeUp = () => {
@@ -92,93 +95,89 @@ export const TinderCard = ({ card, onSwipe, onSkip }: TinderCardProps) => {
     }, 200);
   };
 
+  const bounceBack = () => {
+    animControls.start({
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.2 },
+    });
+  };
+
   return (
-    <div className="flex justify-center ">
-      <motion.div
-        drag="x"
-        dragConstraints={{ left: -200, right: 200 }}
-        dragElastic={0.1}
-        onDragEnd={(event, info) => {
-          if (info.offset.x > 150) {
-            swipeRight();
-          } else if (info.offset.x < -150) {
-            swipeLeft();
-          } else {
-            animControls.start({
-              x: 0,
-              opacity: 1,
-              transition: { duration: 0.2 },
-            });
-          }
-        }}
-        animate={animControls}
+    <motion.div
+      drag="x"
+      dragConstraints={{ left: -200, right: 200 }}
+      dragElastic={0.1}
+      onDragEnd={(event, info) => {
+        if (info.offset.x > 150) {
+          swipeX("right");
+        } else if (info.offset.x < -150) {
+          swipeX("left");
+        } else {
+          bounceBack();
+        }
+      }}
+      animate={animControls}
+      style={{
+        opacity: opacityValue,
+        rotate: rotateValue,
+        x: motionValue,
+        height: 500,
+        width: 300,
+        boxShadow: "5px 10px 18px #888888",
+        borderRadius: 10,
+        backgroundColor: backgroundColor,
+      }}
+    >
+      <div className="flex items-center text-center text-black m-4 h-40">
+        <h1 className="text-2xl font-bold">{card.title}</h1>
+      </div>
+      {card.image && (
+        <div className="flex items-center justify-center m-4">
+          <Image src={card.image} width={100} height={100} />
+        </div>
+      )}
+
+      <div
         style={{
-          opacity: opacityValue,
-          rotate: rotateValue,
-          x: motionValue,
-          height: 500,
-          width: 300,
-          boxShadow: "5px 10px 18px #888888",
-          borderRadius: 10,
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          margin: "50px 0",
-          position: "absolute",
-          backgroundColor: backgroundColor,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          margin: "0 20px",
         }}
       >
-        <div className="text-center text-black m-4">
-          <h1 className="text-2xl font-bold">{card.title}</h1>
-        </div>
-        {card.image && (
-          <div className="avatar flex justify-center">
-            <div className="w-24 mask mask-squircle">
-              <Image src={card.image} width={500} height={500} />
-            </div>
-          </div>
-        )}
-
-        <div
+        <motion.div
+          animate={nopeAnim}
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            margin: "0 20px",
+            opacity: nopeOpacity,
+            fontSize: 50,
+            color: "red",
           }}
         >
-          <motion.div
-            animate={nopeAnim}
-            style={{
-              opacity: nopeOpacity,
-              fontSize: 50,
-              color: "red",
-            }}
-          >
-            Nope
-          </motion.div>
-          <motion.div
-            animate={yepAnim}
-            style={{
-              opacity: yepOpacity,
-              fontSize: 50,
-              color: "green",
-            }}
-          >
-            Yep
-          </motion.div>
-        </div>
-        <div className="flex justify-center">
-          <button onClick={swipeLeft} className="btn btn-red">
-            Nope
-          </button>
-          <button onClick={swipeUp} className="btn btn-red">
-            Skip
-          </button>
-          <button onClick={swipeRight} className="btn btn-red">
-            Yes
-          </button>
-        </div>
-      </motion.div>
-    </div>
+          Nope
+        </motion.div>
+        <motion.div
+          animate={yepAnim}
+          style={{
+            opacity: yepOpacity,
+            fontSize: 50,
+            color: "green",
+          }}
+        >
+          Yep
+        </motion.div>
+      </div>
+      <div className="flex justify-center">
+        <button onClick={() => swipeX("left")} className="btn btn-red">
+          Nope
+        </button>
+        <button onClick={swipeUp} className="btn btn-black">
+          Skip
+        </button>
+        <button onClick={() => swipeX("right")} className="btn btn-green">
+          Yes
+        </button>
+      </div>
+    </motion.div>
   );
 };

@@ -1,6 +1,6 @@
 {
-  "name": "Tindbet by GonnaMakeIt",
-  "short_name": "Tindbet",
+  "name": "Tinbet by GonnaMakeIt",
+  "short_name": "Tinbet",
   "display": "standalone",
   "start_url": "./",
   "theme_color": "#002140",

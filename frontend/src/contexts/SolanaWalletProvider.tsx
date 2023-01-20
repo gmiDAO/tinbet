@@ -13,8 +13,9 @@ import {
   WalletModalProvider,
   WalletMultiButton,
 } from "@solana/wallet-adapter-react-ui";
-import { clusterApiUrl } from "@solana/web3.js";
 import dynamic from "next/dynamic";
+import { clusterApiUrl } from "@solana/web3.js";
+import { Header } from "components/Header";
 
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
@@ -22,13 +23,11 @@ require("@solana/wallet-adapter-react-ui/styles.css");
 type WalletProps = {
   children: ReactNode;
 };
-
-const WalletMultiButtonDynamic = dynamic(
+export const WalletMultiButtonDynamic = dynamic(
   async () =>
     (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
   { ssr: false }
 );
-
 export const SolanaWalletProvider: FC<WalletProps> = ({ children }) => {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
   const network = WalletAdapterNetwork.Mainnet;
@@ -61,7 +60,7 @@ export const SolanaWalletProvider: FC<WalletProps> = ({ children }) => {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
-          <WalletMultiButtonDynamic />
+          <Header />
           {children}
         </WalletModalProvider>
       </WalletProvider>

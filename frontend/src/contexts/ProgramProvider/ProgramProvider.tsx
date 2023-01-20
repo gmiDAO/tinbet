@@ -52,7 +52,7 @@ export const ProgramProvider = ({ children }: ProgramProviderProps) => {
 
   return (
     <ProgramContext.Provider value={program}>
-      {program === null ? "initialising" : children}
+      {children}
     </ProgramContext.Provider>
   );
 };
