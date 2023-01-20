@@ -44,4 +44,38 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/West_Ham_United_FC_logo.svg/1200px-West_Ham_United_FC_logo.svg.png",
   "Wolverhampton Wanderers":
     "https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Wolverhampton_Wanderers.svg/1200px-Wolverhampton_Wanderers.svg.png",
+  "49ers":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Francisco_49ers_logo.svg/2560px-San_Francisco_49ers_logo.svg.png",
+  Seahawks:
+    "https://upload.wikimedia.org/wikipedia/tr/4/48/Seattle_Seahawks_logo.png",
+  Giants:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/New_York_Giants_logo.svg/2560px-New_York_Giants_logo.svg.png",
+  Eagles:
+    "https://upload.wikimedia.org/wikipedia/it/f/ff/Philadelphia_Eagles_logo.png",
+  Ravens:
+    "https://upload.wikimedia.org/wikipedia/it/9/93/Baltimore_Ravens_logo.png",
+  Buccaneers:
+    "https://upload.wikimedia.org/wikipedia/it/a/aa/Tampa_Bay_Buccaneers_logo.png",
+  Chargers:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/7/72/NFL_Chargers_logo.svg/2560px-NFL_Chargers_logo.svg.png",
+  "Forest Green Rovers":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Forest_Green_Rovers_crest.svg/1200px-Forest_Green_Rovers_crest.svg.png",
+  "Birmingham City":
+    "https://upload.wikimedia.org/wikipedia/en/6/68/Birmingham_City_FC_logo.svg",
+  Bengals:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/2560px-Cincinnati_Bengals_logo.svg.png",
+  Bills:
+    "https://upload.wikimedia.org/wikipedia/it/1/1c/Buffalo_Bills_logo.png",
+  "AFC Bournemouth":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/e/e5/AFC_Bournemouth_%282013%29.svg/1200px-AFC_Bournemouth_%282013%29.svg.png",
+  Chiefs:
+    "https://upload.wikimedia.org/wikipedia/de/thumb/e/e1/Kansas_City_Chiefs_logo.svg/1280px-Kansas_City_Chiefs_logo.svg.png",
+  Cowboys:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Dallas_Cowboys.svg/1076px-Dallas_Cowboys.svg.png",
+  Dolphins:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Miami_Dolphins_logo.svg/1200px-Miami_Dolphins_logo.svg.png",
+  Jaguars:
+    "https://upload.wikimedia.org/wikipedia/it/1/15/Jacksonville_Jaguars.png",
+  Vikings:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/98px-Minnesota_Vikings_logo.svg.png",
 };
