@@ -11,16 +11,20 @@ import {
 } from "@monaco-protocol/client";
 import { Program } from "@project-serum/anchor";
 import { PublicKey } from "@solana/web3.js";
-import { BN } from "@project-serum/anchor";
 import { getProgram } from "../utils/solana";
-import { Environment } from "../types";
+import { Environment, MessageSendRequest } from "../types";
 import { MarketData, ChosenOutcome, Bet, MarketCard } from "./types";
+import * as model from "./model";
 
 // const mintToken = "Aqw6KyChFm2jwAFND3K29QjUcKZ3Pk72ePe5oMxomwMH";
 const mintToken = "Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB";
 const mintDecimals = 6;
 const marketsStatus = MarketStatus.Open;
 
+/* 
+  Deprecated in favour of updateMarketsAddresses
+  Left here for example purposes
+*/
 export const getMarketsAddresses = async (
   env: Environment
 ): Promise<string[] | null> => {
@@ -70,24 +74,83 @@ export const getMarketCard = async (
   }
 };
 
-export const placeBet = async (
-  program: Program,
-  market: GetAccount<MarketAccount>,
-  bet: Bet
-) => {
-  try {
-    const stakeInteger = new BN(bet.stake * 10 ** mintDecimals);
+export const getMarketCards = async (
+  env: Environment
+): Promise<MarketCard[] | null> => {
+  const marketCards = await model.getMarketCards(env.MARKETS);
+  return marketCards;
+};
 
-    const createOrderResponse = await createOrder(
-      program,
-      market.publicKey,
-      bet.marketOutcomeIndex,
-      bet.forOutcome,
-      bet.odds,
-      stakeInteger
-    );
+export const updateMarketsAndSendBatch = async (env: Environment) => {
+  const marketAddresses: string[] = await updateMarketsAddresses(env);
+  const batch: MessageSendRequest[] = marketAddresses.map((value) => ({
+    body: JSON.stringify(value),
+  }));
+  // @ts-ignore
+  await env.POPULATE_MARKETS.sendBatch(batch);
+};
+
+const updateMarketsAddresses = async (
+  env: Environment
+): Promise<string[] | null> => {
+  const eventCategories = await getEventCategories(env);
+  if (eventCategories) {
+    const validMarketsAddresses =
+      getValidMarketsAddressesFromEventCategories(eventCategories);
+    await model.updateMarketAddresses(env.MARKETS, validMarketsAddresses);
+    return validMarketsAddresses;
+  }
+  return null;
+};
+
+const getValidMarketsAddressesFromEventCategories = (
+  eventCategories: any
+): string[] => {
+  /* 
+    Returns an array of valid market addresses from event categories.
+    For sake of simplicity for the hackathon, we only allow Full Time Result markets
+  */
+  const validMarketsAddresses: string[] = [];
+  for (const eventCategory of eventCategories) {
+    if (eventCategory.id === "HISTORICAL") {
+      continue;
+    }
+    for (const eventGroup of eventCategory.eventGroup || []) {
+      for (const event of eventGroup.events || []) {
+        for (const market of event.markets || []) {
+          if (market.marketName === "Full Time Result") {
+            validMarketsAddresses.push(market.marketAccount);
+          }
+        }
+      }
+    }
+  }
+  return validMarketsAddresses;
+};
+
+const getEventCategories = async (env: Environment): Promise<any> => {
+  /* Retrieves event categories from cache if exists or from betdex API  and updates the cache
+   returns event categories */
+
+  const eventCategoriesCached = await model.getEventCategories(env.MARKETS);
+  if (eventCategoriesCached) {
+    return eventCategoriesCached;
+  }
+  const eventCategories = await getBetDexEventCategories();
+  if (eventCategories) {
+    await model.updateEventCategories(env.MARKETS, eventCategories);
+    return eventCategories;
+  }
+  return null;
+};
+
+const getBetDexEventCategories = async (): Promise<any> => {
+  try {
+    const resp = await fetch("https://prod.events.api.betdex.com/events");
+    const data: any = await resp.json();
+    return data?.eventCategories || [];
   } catch (e) {
-    console.error(e);
+    console.log("Error getting betdex events", e);
   }
 };
 
@@ -113,7 +176,7 @@ const parsedChosenOutcome = (
   let marketOutcomes: any = {};
   for (let i = 0; i < marketPrices.length; i++) {
     let marketPrice = marketPrices[i];
-    // skip Draw market outcome
+    // skip Draw market outcome just for simplicity for the hackathon
     if (marketPrice.marketOutcome === "Draw") {
       continue;
     }

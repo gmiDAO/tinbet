@@ -2,6 +2,7 @@ import { MarketCard } from "./types";
 
 const MARKETS_KEY = "MARKETS";
 const MARKET_CARDS_KEY = "MARKET_CARDS";
+const EVENT_CATEGORIES_KEY = "EVENT_CATEGORIES";
 const BASE_EXPIRATION_TTL = 660; // 11 minutes (Cron updates market cards every 10 minutes)
 
 export const getMarketCards = async (
@@ -53,4 +54,25 @@ export const updateMarketAddresses = async (
 ): Promise<void> => {
   if (!marketAddresses) return;
   await KV.put(MARKETS_KEY, JSON.stringify(marketAddresses));
+};
+
+export const updateEventCategories = async (
+  KV: KVNamespace,
+  eventCategories: any[]
+): Promise<void> => {
+  if (!eventCategories) return;
+  await KV.put(EVENT_CATEGORIES_KEY, JSON.stringify(eventCategories), {
+    expirationTtl: 3600, // 1 hour cached
+  });
+};
+
+export const getEventCategories = async (KV: KVNamespace): Promise<any> => {
+  try {
+    const eventCategories = await KV.get(EVENT_CATEGORIES_KEY, "json");
+    if (eventCategories) {
+      return eventCategories;
+    }
+  } catch (e) {
+    console.log("Error getting event categories", e);
+  }
 };
