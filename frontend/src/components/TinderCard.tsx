@@ -129,98 +129,110 @@ export const TinderCard = ({
         backgroundColor: backgroundColor,
       }}
     >
-      <div className="flex items-center text-center text-black m-4 h-40">
-        <h1 className="text-2xl font-bold">{card.title}</h1>
-      </div>
+      <div className="mx-4">
+        <div className="flex items-center text-center text-black h-40 ">
+          <h1 className="text-2xl font-bold">{card.title}</h1>
+        </div>
+        <div className="flex items-center justify-center my-4 relative">
+          <motion.div
+            animate={nopeAnim}
+            style={{
+              opacity: nopeOpacity,
+              fontSize: 34,
+              fontWeight: "bold",
+              color: "red",
+              position: "absolute",
+              top: "-45px",
+              zIndex: 10,
+            }}
+          >
+            No
+          </motion.div>
+          <motion.div
+            animate={yepAnim}
+            style={{
+              opacity: yepOpacity,
+              fontSize: 34,
+              fontWeight: "bold",
+              color: "green",
+              position: "absolute",
+              top: "-45px",
+              zIndex: 10,
+            }}
+          >
+            Yes
+          </motion.div>
+          <Image
+            src={card.image || "/no_image_placeholder.png"}
+            width={150}
+            height={150}
+          />
+        </div>
+        <div className="flex flex-col justify-center">
+          <p className="text-center text-gray-500 ">Betting Odds </p>
+          <div className="flex text-center text-lg font-bold">
+            <div className="w-1/2">
+              <label className="text-gray-500">No</label>
+              <p>
+                {(
+                  card.data.outcome.forOutcomePrice /
+                  card.data.outcome.againstOutcomePrice
+                ).toFixed(2)}
+              </p>
+            </div>
+            <div className="w-1/2">
+              <label className="text-gray-500">Yes</label>
+              <p>{card.data.outcome.forOutcomePrice}</p>
+            </div>
+          </div>
+        </div>
 
-      <div className="flex items-center justify-center m-4">
-        <Image
-          src={card.image || "/no_image_placeholder.png"}
-          width={150}
-          height={150}
-        />
-      </div>
-
-      <div className="flex items-center justify-between m-4">
-        <motion.div
-          animate={nopeAnim}
-          style={{
-            opacity: nopeOpacity,
-            fontSize: 30,
-            color: "red",
-          }}
-        >
-          Nope
-        </motion.div>
-        <motion.div
-          animate={yepAnim}
-          style={{
-            opacity: yepOpacity,
-            fontSize: 30,
-            color: "green",
-          }}
-        >
-          Yep
-        </motion.div>
-      </div>
-      <div className="flex justify-between pt-4">
-        <button
-          onClick={() => swipeX("left")}
-          className="btn btn-circle btn-error btn-lg hover:bg-opacity-70"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-8 h-8"
+        <div className="flex justify-between my-2">
+          <button
+            onClick={() => swipeX("left")}
+            className="btn btn-circle btn-error btn-lg hover:bg-opacity-70"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-        <button
-          onClick={swipeUp}
-          className="btn btn-circle btn-warning btn-lg hover:bg-opacity-70"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-8 h-8"
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-8 h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <button
+            onClick={swipeUp}
+            className="btn btn-circle btn-warning btn-lg hover:bg-opacity-70"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
-            />
-          </svg>
-        </button>
-        <button
-          onClick={() => swipeX("right")}
-          className="btn btn-circle btn-success btn-lg hover:bg-opacity-70"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={2}
-            stroke="currentColor"
-            className="w-8 h-8"
+            SKIP
+          </button>
+          <button
+            onClick={() => swipeX("right")}
+            className="btn btn-circle btn-success btn-lg hover:bg-opacity-70"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-            />
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-8 h-8"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
     </motion.div>
   );
