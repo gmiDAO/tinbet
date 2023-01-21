@@ -11,7 +11,7 @@ queues.producers = [
 ]
 
 queues.consumers = [
-  { queue = "populate-markets", max_batch_size = 2, max_batch_timeout = 30, max_retries = 0 }
+  { queue = "populate-markets", max_batch_size = 1, max_batch_timeout = 30, max_retries = 0 }
 ]
 
 [triggers]
