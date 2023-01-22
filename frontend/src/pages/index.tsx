@@ -7,6 +7,7 @@ import { useProgram } from "contexts/ProgramProvider";
 import Modal from "components/Modal";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButtonDynamic } from "contexts/SolanaWalletProvider";
+import { useUserContext } from "contexts/UserProvider/hook";
 
 type HomePageProps = {
   marketCards: any[];
@@ -16,6 +17,7 @@ const HomePage: NextPage<HomePageProps> = ({ marketCards }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const program = useProgram();
   const wallet = useWallet();
+  const { user } = useUserContext();
 
   const removeCard = (card: any) => {
     setCards((prevCards) =>
@@ -38,7 +40,7 @@ const HomePage: NextPage<HomePageProps> = ({ marketCards }) => {
       const bet: Bet = {
         forOutcome: forOutcome,
         odds: price,
-        stake: 0.1,
+        stake: user.stake,
         marketOutcome: card.data.outcome.marketOutcome,
         marketOutcomeIndex: card.data.outcome.marketOutcomeIndex,
       };
@@ -73,13 +75,13 @@ const HomePage: NextPage<HomePageProps> = ({ marketCards }) => {
       </Modal>
 
       <div className="flex flex-col items-center justify-center px-5 py-2">
-        <p className="text-2xl">Swipe righ or left to bet!</p>
-        <p className="text-md">all bets are in USDT</p>
+        <p className="text-2xl">Swipe righ or left to place your bet!</p>
+        <p className="text-md mt-2">
+          Your current Bet Stake is: <strong>{user.stake} USDT</strong>
+        </p>
+        <p className="text-xs mb-2"> Change the betting stake in settings</p>
 
-        <div
-          className="flex justify-center py-2 mt-2"
-          style={{ height: "600px" }}
-        >
+        <div className="flex justify-center" style={{ height: "600px" }}>
           <div className="relative w-80">
             {cards.map((card, index) => {
               return (
