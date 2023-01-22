@@ -9,10 +9,6 @@ export const Header = () => {
       <Link href="/">
         <a className="btn btn-ghost normal-case text-xl">🔥 Tinbet</a>
       </Link>
-      
-      <Link href="/about">
-        <a className="btn btn-ghost normal-case text-xl"> About </a>
-      </Link>
 
       {wallet.connected ? (
         <div className="flex-none">
