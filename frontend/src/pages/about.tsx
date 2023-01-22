@@ -6,7 +6,7 @@ export default function AboutPage() {
       <Head>
         <title>Tinbet | About</title>
       </Head>
-      <div className="flex flex-col items-center justify-center text-center m-4 mb-20">
+      <div className="flex flex-col items-center justify-center text-center mx-auto max-w-xl mt-5 mb-20">
         <h1 className="m-2 text-4xl font-bold ">
           Betting has never been so fun!
         </h1>
