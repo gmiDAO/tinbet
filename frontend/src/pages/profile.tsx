@@ -22,19 +22,19 @@ export default function ProfilePage() {
         <title>Tinbet | Profile </title>
       </Head>
 
-      <div className="flex flex-col items-center text-center m-10">
+      <div className="flex flex-col min-h-full max-w-xl mx-auto text-center mt-20">
         {wallet.connected && (
-          <section className="m-4 w-full flex justify-between items-center">
-            <label className="text-xl w-1/2">Logout</label>
+          <div className="m-4 w-auto flex items-center ">
+            <label className="text-xl flex-grow">Logout</label>
             <WalletMultiButtonDynamic />
-          </section>
+          </div>
         )}
 
-        <section className="m-4 w-full flex justify-between items-center">
-          <label className="text-xl w-1/2">Betting Stake (USDT)</label>
+        <div className="m-4 w-auto flex  items-center ">
+          <label className="text-xl flex-grow">Betting Stake (USDT)</label>
           <input
             type="number"
-            className="w-1/2 h-12 border-2 border-gray-400 rounded-md text-center bg-gray-300 font-semibold text-xl hover:text-black focus:text-black md:text-basecursor-default"
+            className="w-44 h-12 border-2 border-gray-400 rounded-md text-center bg-gray-300 font-semibold text-xl hover:text-black focus:text-black md:text-basecursor-default"
             value={user.stake}
             onChange={(e) => {
               const newStake =
@@ -46,7 +46,7 @@ export default function ProfilePage() {
             }}
             step="0.1"
           ></input>
-        </section>
+        </div>
       </div>
     </>
   );

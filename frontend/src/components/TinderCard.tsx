@@ -174,9 +174,9 @@ export const TinderCard = ({
             <div className="w-1/2">
               <label className="text-gray-500">No</label>
               <p>
-                {(
-                  card.data.outcome.forOutcomePrice /
-                  card.data.outcome.againstOutcomePrice
+                {( // forOutcomePrice/Risk
+                  card.data.outcome.forOutcomePrice/
+                  (card.data.outcome.forOutcomePrice-1)
                 ).toFixed(2)}
               </p>
             </div>
