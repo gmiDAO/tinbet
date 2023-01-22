@@ -75,11 +75,19 @@ const HomePage: NextPage<HomePageProps> = ({ marketCards }) => {
       </Modal>
 
       <div className="flex flex-col items-center justify-center px-5 py-2">
-        <p className="text-2xl">Swipe righ or left to place your bet!</p>
-        <p className="text-md mt-2">
-          Your current Bet Stake is: <strong>{user.stake} USDT</strong>
+        <p className="text-2xl text-center">
+          Swipe righ or left to place your bet!
         </p>
-        <p className="text-xs mb-2"> Change the betting stake in settings</p>
+        {wallet.connected && (
+          <>
+            <p className="text-md mt-2 text-center">
+              Your current Bet Stake is: <strong>{user.stake} USDT</strong>
+            </p>
+            <p className="text-xs mb-2 text-center">
+              Change the betting stake in settings
+            </p>
+          </>
+        )}
 
         <div className="flex justify-center" style={{ height: "600px" }}>
           <div className="relative w-80">

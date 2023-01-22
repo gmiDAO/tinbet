@@ -24,13 +24,13 @@ export default function ProfilePage() {
 
       <div className="flex flex-col items-center text-center m-10">
         {wallet.connected && (
-          <section className="m-4 w-80 flex justify-between items-center">
+          <section className="m-4 w-full flex justify-between items-center">
             <label className="text-xl w-1/2">Logout</label>
             <WalletMultiButtonDynamic />
           </section>
         )}
 
-        <section className="m-4 w-80 flex justify-between items-center">
+        <section className="m-4 w-full flex justify-between items-center">
           <label className="text-xl w-1/2">Betting Stake (USDT)</label>
           <input
             type="number"
