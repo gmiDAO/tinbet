@@ -22,7 +22,7 @@ export default function ProfilePage() {
         <title>Tinbet | Profile </title>
       </Head>
 
-      <div className="flex flex-col min-h-full max-w-xl mx-auto text-center mt-20">
+      <div className="flex flex-col min-h-full max-w-xl mx-auto text-left mt-20">
         {wallet.connected && (
           <div className="m-4 w-auto flex items-center ">
             <label className="text-xl flex-grow">Logout</label>

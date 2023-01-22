@@ -21,7 +21,7 @@ export default function AboutPage() {
         </p>
         <p className="m-4 text-xl">
           This is a project by &nbsp;
-          <a href="gonnamakeit.io" className="underline">
+          <a href="https://gonnamakeit.io/" className="underline">
             Gonna Make It
           </a>
           &nbsp; for the Sandstorm Hackathon 2023.
