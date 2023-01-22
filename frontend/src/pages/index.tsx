@@ -83,16 +83,13 @@ const HomePage: NextPage<HomePageProps> = ({ marketCards }) => {
             <p className="text-md mt-2 text-center">
               Your current Bet Stake is: <strong>{user.stake} USDT</strong>
             </p>
-            <p className="text-xs mb-2 text-center">
+            <p className="text-xs text-center">
               Change the betting stake in settings
             </p>
           </>
         )}
 
-        <div
-          className="flex justify-center py-2 mt-2"
-          style={{ height: "550px" }}
-        >
+        <div className="flex justify-center mt-2" style={{ height: "510px" }}>
           <div className="relative w-80">
             {cards.map((card, index) => {
               return (
