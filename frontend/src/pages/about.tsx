@@ -1,30 +1,31 @@
 import Head from "next/head";
 
 export default function AboutPage() {
-
   return (
     <>
       <Head>
         <title>Tinbet | About</title>
       </Head>
-
-      <div className="w-screen min-h-full py-12 bg-white">
-        <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="w-fit max-w-screen lg:text-center">
-            <p className="w-fit mt-2 text-blue-800 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
-              <a href="https://tinbet-gonnamakeit.vercel.app/"> TinBET </a>
-              aims to have more fans having fun aping on Props and BetDEX!
-            </p>
-            <div>
-              <br></br>
-              <h2 className="text-base text-red-500 font-semibold"> 
-              Made with love by the
-              <a href="https://gonnamakeit.io/"> Gonna Make It Team </a>
-              for the Sandstorm Hackaton
-              </h2>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col items-center justify-center text-center m-4 mb-20">
+        <h1 className="m-2 text-4xl font-bold ">
+          Betting has never been so fun!
+        </h1>
+        <p className="m-3 text-2xl">
+          Tinbet is a tinder-like decentralized betting platform built on
+          Solana.
+        </p>
+        <p className="m-3 text-xl">
+          It is not meant to be used for professional or high stakes betting,
+          but rather for having fun and learning about Decentralized Sports
+          Betting.
+        </p>
+        <p className="m-4 text-xl">
+          This is a project by &nbsp;
+          <a href="gonnamakeit.io" className="underline">
+            Gonna Make It
+          </a>
+          &nbsp; for the Sandstorm Hackathon 2023.
+        </p>
       </div>
     </>
   );

@@ -78,7 +78,7 @@ const HomePage: NextPage<HomePageProps> = ({ marketCards }) => {
 
         <div
           className="flex justify-center py-2 mt-2"
-          style={{ height: "600px" }}
+          style={{ height: "550px" }}
         >
           <div className="relative w-80">
             {cards.map((card, index) => {
