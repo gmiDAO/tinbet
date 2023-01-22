@@ -108,7 +108,8 @@ const getValidMarketsAddressesFromEventCategories = (
 ): string[] => {
   /* 
     Returns an array of valid market addresses from event categories.
-    For sake of simplicity for the hackathon, we only allow Full Time Result markets
+    For sake of simplicity for the hackathon, we only allow Full Time Result and Winner markets
+    (Skip Both Teams To Score and Over/Under 2.5)
   */
   const validMarketsAddresses: string[] = [];
   for (const eventCategory of eventCategories) {
@@ -118,7 +119,10 @@ const getValidMarketsAddressesFromEventCategories = (
     for (const eventGroup of eventCategory.eventGroup || []) {
       for (const event of eventGroup.events || []) {
         for (const market of event.markets || []) {
-          if (market.marketName === "Full Time Result") {
+          if (
+            market.marketName === "Full Time Result" ||
+            market.marketName === "Winner"
+          ) {
             validMarketsAddresses.push(market.marketAccount);
           }
         }

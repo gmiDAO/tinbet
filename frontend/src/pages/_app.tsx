@@ -5,6 +5,7 @@ import "../styles/App.css";
 import { SolanaWalletProvider } from "../contexts/SolanaWalletProvider";
 import { ProgramProvider } from "../contexts/ProgramProvider";
 import Head from "next/head";
+import { UserProvider } from "contexts/UserProvider/UserProvider";
 import { Footer } from "components/Footer";
 // set custom RPC server endpoint for the final website
 // const endpoint = "https://explorer-api.devnet.solana.com";
@@ -19,8 +20,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <SolanaWalletProvider>
         <ProgramProvider>
-          <Component {...pageProps} />
-          <Footer />
+          <UserProvider>
+            <Component {...pageProps} />
+            <Footer />
+          </UserProvider>
         </ProgramProvider>
       </SolanaWalletProvider>
     </>
