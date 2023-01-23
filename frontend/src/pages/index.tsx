@@ -76,7 +76,7 @@ const HomePage: NextPage<HomePageProps> = ({ marketCards }) => {
 
       <div className="flex flex-col items-center justify-center px-5 py-2">
         <p className="text-2xl text-center">
-          Swipe righ or left to place your bet!
+          Swipe right or left to place your bet!
         </p>
         {wallet.connected && (
           <>
