@@ -78,7 +78,7 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/it/1/15/Jacksonville_Jaguars.png",
   Vikings:
     "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/98px-Minnesota_Vikings_logo.svg.png",  
-  Atlanta:
+  Atalanta:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Atlanta_MLS.svg/640px-Atlanta_MLS.svg.png",
   Cremonese:
     "https://upload.wikimedia.org/wikipedia/en/e/e1/US_Cremonese_logo.svg",
@@ -87,5 +87,15 @@ export const OUTCOME_IMAGES = {
   Lecce:
     "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Us_lecce.svg/1200px-Us_lecce.svg.png",
   "Spezia Calcio":
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Spezia_Calcio.svg/1200px-Spezia_Calcio.svg.png"
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Spezia_Calcio.svg/1200px-Spezia_Calcio.svg.png",
+  "Inter Milan":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcywj0Nmt9VIGw5h2hI-2ncB7KMofshCx6xeIksiU4tjCUdxydaOAta1o9UU2Kye03x0&usqp=CAU",
+  Torino:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Torino_FC_Logo.svg/1200px-Torino_FC_Logo.svg.png",
+  Salernitana:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/US_Salernitana_1919_logo.svg/1200px-US_Salernitana_1919_logo.svg.png",
+  Bologna:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Bologna_F.C._1909_logo.svg/800px-Bologna_F.C._1909_logo.svg.png",
+  Sampdoria:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/U.C._Sampdoria_logo.svg/1200px-U.C._Sampdoria_logo.svg.png"
 };
