@@ -77,5 +77,15 @@ export const OUTCOME_IMAGES = {
   Jaguars:
     "https://upload.wikimedia.org/wikipedia/it/1/15/Jacksonville_Jaguars.png",
   Vikings:
-    "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/98px-Minnesota_Vikings_logo.svg.png",
+    "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/98px-Minnesota_Vikings_logo.svg.png",  
+  Atlanta:
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Atlanta_MLS.svg/640px-Atlanta_MLS.svg.png",
+  Cremonese:
+    "https://upload.wikimedia.org/wikipedia/en/e/e1/US_Cremonese_logo.svg",
+  Empoli:
+    "https://upload.wikimedia.org/wikipedia/en/e/e9/Empoli_F.C._logo_%282021%29.png",
+  Lecce:
+    "https://upload.wikimedia.org/wikipedia/en/thumb/8/85/Us_lecce.svg/1200px-Us_lecce.svg.png",
+  "Spezia Calcio":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Spezia_Calcio.svg/1200px-Spezia_Calcio.svg.png"
 };
