@@ -46,6 +46,8 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Wolverhampton_Wanderers.svg/1200px-Wolverhampton_Wanderers.svg.png",
   "49ers":
     "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Francisco_49ers_logo.svg/2560px-San_Francisco_49ers_logo.svg.png",
+  "Sanf Francisco 49ers":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/San_Francisco_49ers_logo.svg/2560px-San_Francisco_49ers_logo.svg.png",
   Seahawks:
     "https://upload.wikimedia.org/wikipedia/tr/4/48/Seattle_Seahawks_logo.png",
   Giants:
@@ -89,7 +91,7 @@ export const OUTCOME_IMAGES = {
   "Spezia Calcio":
     "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Spezia_Calcio.svg/1200px-Spezia_Calcio.svg.png",
   "Inter Milan":
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGcywj0Nmt9VIGw5h2hI-2ncB7KMofshCx6xeIksiU4tjCUdxydaOAta1o9UU2Kye03x0&usqp=CAU",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/FC_Internazionale_Milano_2021.svg/1200px-FC_Internazionale_Milano_2021.svg.png",
   Torino:
     "https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Torino_FC_Logo.svg/1200px-Torino_FC_Logo.svg.png",
   Salernitana:
@@ -97,5 +99,41 @@ export const OUTCOME_IMAGES = {
   Bologna:
     "https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Bologna_F.C._1909_logo.svg/800px-Bologna_F.C._1909_logo.svg.png",
   Sampdoria:
-    "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/U.C._Sampdoria_logo.svg/1200px-U.C._Sampdoria_logo.svg.png"
+    "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/U.C._Sampdoria_logo.svg/1200px-U.C._Sampdoria_logo.svg.png",
+  "Cincinnaty Bengals":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/1200px-Cincinnati_Bengals_logo.svg.png",
+  "Kansas City Chiefs":
+    "https://upload.wikimedia.org/wikipedia/fi/7/76/Kansas_City_Chiefs_logo.png",
+  "Philadelphia Eagles":
+    "https://upload.wikimedia.org/wikipedia/it/f/ff/Philadelphia_Eagles_logo.png",
+  "Reading":
+    "https://upload.wikimedia.org/wikipedia/en/1/11/Reading_FC.svg",
+  "Preston North End":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Preston_North_End_FC.svg/1200px-Preston_North_End_FC.svg.png",
+  "Blackpool":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Blackpool_FC_logo.svg/180px-Blackpool_FC_logo.svg.png",
+  "Fleetwood Town":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Fleetwood_Town_F.C._logo.svg/1200px-Fleetwood_Town_F.C._logo.svg.png",
+  "Sheffield Wednesday":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/8/88/Sheffield_Wednesday_badge.svg/1200px-Sheffield_Wednesday_badge.svg.png",
+  "Luton Town":
+    "https://upload.wikimedia.org/wikipedia/en/8/8b/LutonTownFC2009.png",
+  "Grimsby Town":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Grimsby_Town_F.C._logo.svg/1200px-Grimsby_Town_F.C._logo.svg.png",
+  "Burnley":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Burnley_F.C._Logo.svg/1200px-Burnley_F.C._Logo.svg.png",
+  "Ipswich Town":
+    "https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
+  "Sunderland":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Logo_Sunderland.svg/1200px-Logo_Sunderland.svg.png",
+  "Bristol City":
+    "https://upload.wikimedia.org/wikipedia/en/f/f5/Bristol_City_crest.svg",
+  "West Bromwich Albion":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/West_Bromwich_Albion.svg/1200px-West_Bromwich_Albion.svg.png",
+  "Blackburn Rovers":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Blackburn_Rovers.svg/1200px-Blackburn_Rovers.svg.png",
+  "Walsall":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/Walsall_FC.svg/1200px-Walsall_FC.svg.png",
+  "Accrington Stanley":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Accrington_Stanley_F.C._logo.svg/1200px-Accrington_Stanley_F.C._logo.svg.png",
 };
