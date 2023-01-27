@@ -100,7 +100,7 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Bologna_F.C._1909_logo.svg/800px-Bologna_F.C._1909_logo.svg.png",
   Sampdoria:
     "https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/U.C._Sampdoria_logo.svg/1200px-U.C._Sampdoria_logo.svg.png",
-  "Cincinnaty Bengals":
+  "Cincinnati Bengals":
     "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Cincinnati_Bengals_logo.svg/1200px-Cincinnati_Bengals_logo.svg.png",
   "Kansas City Chiefs":
     "https://upload.wikimedia.org/wikipedia/fi/7/76/Kansas_City_Chiefs_logo.png",
@@ -136,4 +136,8 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/Walsall_FC.svg/1200px-Walsall_FC.svg.png",
   "Accrington Stanley":
     "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Accrington_Stanley_F.C._logo.svg/1200px-Accrington_Stanley_F.C._logo.svg.png",
+  "Stevenage":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Stevenage_Football_Club.png/800px-Stevenage_Football_Club.png",
+  "Stoke City":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Stoke_City_FC.svg/800px-Stoke_City_FC.svg.png",
 };
