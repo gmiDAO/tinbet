@@ -140,4 +140,28 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Stevenage_Football_Club.png/800px-Stevenage_Football_Club.png",
   "Stoke City":
     "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Stoke_City_FC.svg/800px-Stoke_City_FC.svg.png",
+  "Hellas Verona":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Hellas_Verona_FC_logo_%282020%29.svg/1200px-Hellas_Verona_FC_logo_%282020%29.svg.png",
+  "Udinese":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Udinese_Calcio_logo.svg/1200px-Udinese_Calcio_logo.svg.png",
+  "AS Roma":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/AS_Roma_logo_%282017%29.svg/1200px-AS_Roma_logo_%282017%29.svg.png",
+  "Napoli":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SSC_Neapel.svg/1200px-SSC_Neapel.svg.png",
+  "Fiorentina":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/2022_ACF_Fiorentina_logo.svg/1200px-2022_ACF_Fiorentina_logo.svg.png",
+  "Lazio":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/S.S._Lazio_badge.svg/1200px-S.S._Lazio_badge.svg.png",
+  "Monza":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/A.C._Monza_logo_%282019%29.svg/1200px-A.C._Monza_logo_%282019%29.svg.png",
+  "Juventus":
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juventus_FC_2017_icon_%28black%29.svg/640px-Juventus_FC_2017_icon_%28black%29.svg.png",
+  "AC Milan":
+    "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg",
+  "Sassuolo":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/US_Sassuolo_Calcio_logo.svg/1200px-US_Sassuolo_Calcio_logo.svg.png",
+  "Wrexham":
+    "https://upload.wikimedia.org/wikipedia/en/3/3f/Wrexham_A.F.C._logo.png",
+  "Sheffield United":
+    "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Sheffield_United_FC_logo.svg/1200px-Sheffield_United_FC_logo.svg.png",
 };
