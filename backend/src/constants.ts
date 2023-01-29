@@ -1,5 +1,6 @@
 export const OUTCOME_IMAGES = {
-  Arsenal: "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+  Arsenal: 
+    "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
   "Aston Villa":
     "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Aston_Villa_FC_crest_%282016%29.svg/1200px-Aston_Villa_FC_crest_%282016%29.svg.png",
   "Bayern Munich":
