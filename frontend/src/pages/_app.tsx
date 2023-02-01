@@ -7,6 +7,7 @@ import { ProgramProvider } from "../contexts/ProgramProvider";
 import Head from "next/head";
 import { UserProvider } from "contexts/UserProvider/UserProvider";
 import { Footer } from "components/Footer";
+import { Analytics } from "@vercel/analytics/react";
 // set custom RPC server endpoint for the final website
 // const endpoint = "https://explorer-api.devnet.solana.com";
 // const endpoint = "http://127.0.0.1:8899";
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <ProgramProvider>
           <UserProvider>
             <Component {...pageProps} />
+            <Analytics />
             <Footer />
           </UserProvider>
         </ProgramProvider>
