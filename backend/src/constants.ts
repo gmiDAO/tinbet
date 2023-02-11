@@ -165,4 +165,14 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/en/3/3f/Wrexham_A.F.C._logo.png",
   "Sheffield United":
     "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Sheffield_United_FC_logo.svg/1200px-Sheffield_United_FC_logo.svg.png",
+  "AS Roma": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMzn9cPtT-vACD4JGNwMA3vhJirHIGU47-cclikLobpiM7bJgHDWnDIEYuQ&amp;s", 
+  "FC Augsburg": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUiMm4zcKb4ow5iI4DYSUfu_mxkiOB2bfljFzazF3eiS0iZ44gmS3SaiAMm9Y&amp;s", 
+  "VfB Stuttgart": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPH90ZwxraSqht63j87UfYVCgxg2Cp4Rb8WhvfaepQ31qZJqCArfBm37WUbo&amp;s", 
+  "Borussia Dortmund": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHu49_T_tPiCdeC-l0sJxLQHnMmyoz9q4GfhSIXpsR8IAp3GqrzSRcnaiTZEY&amp;s", 
+  "Bayer Leverkusen": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Yvc6bUqgZE2pqfY8V0z64hUsL4YyZifFJYuaXL4nChv2AJJVottzKrjawA&amp;s", 
 };
