@@ -175,4 +175,12 @@ export const OUTCOME_IMAGES = {
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHu49_T_tPiCdeC-l0sJxLQHnMmyoz9q4GfhSIXpsR8IAp3GqrzSRcnaiTZEY&amp;s", 
   "Bayer Leverkusen": 
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Yvc6bUqgZE2pqfY8V0z64hUsL4YyZifFJYuaXL4nChv2AJJVottzKrjawA&amp;s", 
+  "Monza": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9fg1V_3VmQObBWCjdwqVmbXSX0AN4ltGv7G6ou4gzNTz7LPhKSxqPuEGCvw&amp;s", 
+  "Juventus": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPbuNHDnUkVACZRY0THqz00At8WhEs1iRShC-fdO1-jY_2FnfLqS7kLhFUNg&amp;s", 
+  "Borussia Moenchengladbach": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQBxE2hiYwkcXPHmPYi5NH5ELDICuyxvXwWClfPeTTvb1o4PMMbZVoOsYm-Hw&amp;s", 
+  "Eintracht Frankfurt": 
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7t6-_5f5lcQzQabsLBGN2DJilR-oTupUIJ152dIltUzJzK24JoNJXtHqiVQ&amp;s", 
 };
