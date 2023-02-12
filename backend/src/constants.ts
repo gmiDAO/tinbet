@@ -1,6 +1,5 @@
 export const OUTCOME_IMAGES = {
-  Arsenal: 
-    "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+  Arsenal: "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
   "Aston Villa":
     "https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Aston_Villa_FC_crest_%282016%29.svg/1200px-Aston_Villa_FC_crest_%282016%29.svg.png",
   "Bayern Munich":
@@ -80,7 +79,7 @@ export const OUTCOME_IMAGES = {
   Jaguars:
     "https://upload.wikimedia.org/wikipedia/it/1/15/Jacksonville_Jaguars.png",
   Vikings:
-    "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/98px-Minnesota_Vikings_logo.svg.png",  
+    "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Minnesota_Vikings_logo.svg/98px-Minnesota_Vikings_logo.svg.png",
   Atalanta:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Atlanta_MLS.svg/640px-Atlanta_MLS.svg.png",
   Cremonese:
@@ -107,11 +106,10 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/fi/7/76/Kansas_City_Chiefs_logo.png",
   "Philadelphia Eagles":
     "https://upload.wikimedia.org/wikipedia/it/f/ff/Philadelphia_Eagles_logo.png",
-  "Reading":
-    "https://upload.wikimedia.org/wikipedia/en/1/11/Reading_FC.svg",
+  Reading: "https://upload.wikimedia.org/wikipedia/en/1/11/Reading_FC.svg",
   "Preston North End":
     "https://upload.wikimedia.org/wikipedia/en/thumb/8/82/Preston_North_End_FC.svg/1200px-Preston_North_End_FC.svg.png",
-  "Blackpool":
+  Blackpool:
     "https://upload.wikimedia.org/wikipedia/en/thumb/d/df/Blackpool_FC_logo.svg/180px-Blackpool_FC_logo.svg.png",
   "Fleetwood Town":
     "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Fleetwood_Town_F.C._logo.svg/1200px-Fleetwood_Town_F.C._logo.svg.png",
@@ -121,11 +119,11 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/en/8/8b/LutonTownFC2009.png",
   "Grimsby Town":
     "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Grimsby_Town_F.C._logo.svg/1200px-Grimsby_Town_F.C._logo.svg.png",
-  "Burnley":
+  Burnley:
     "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Burnley_F.C._Logo.svg/1200px-Burnley_F.C._Logo.svg.png",
   "Ipswich Town":
     "https://upload.wikimedia.org/wikipedia/en/4/43/Ipswich_Town.svg",
-  "Sunderland":
+  Sunderland:
     "https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Logo_Sunderland.svg/1200px-Logo_Sunderland.svg.png",
   "Bristol City":
     "https://upload.wikimedia.org/wikipedia/en/f/f5/Bristol_City_crest.svg",
@@ -133,54 +131,48 @@ export const OUTCOME_IMAGES = {
     "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/West_Bromwich_Albion.svg/1200px-West_Bromwich_Albion.svg.png",
   "Blackburn Rovers":
     "https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/Blackburn_Rovers.svg/1200px-Blackburn_Rovers.svg.png",
-  "Walsall":
+  Walsall:
     "https://upload.wikimedia.org/wikipedia/en/thumb/e/ef/Walsall_FC.svg/1200px-Walsall_FC.svg.png",
   "Accrington Stanley":
     "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Accrington_Stanley_F.C._logo.svg/1200px-Accrington_Stanley_F.C._logo.svg.png",
-  "Stevenage":
+  Stevenage:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Stevenage_Football_Club.png/800px-Stevenage_Football_Club.png",
   "Stoke City":
     "https://upload.wikimedia.org/wikipedia/en/thumb/2/29/Stoke_City_FC.svg/800px-Stoke_City_FC.svg.png",
   "Hellas Verona":
     "https://upload.wikimedia.org/wikipedia/en/thumb/9/92/Hellas_Verona_FC_logo_%282020%29.svg/1200px-Hellas_Verona_FC_logo_%282020%29.svg.png",
-  "Udinese":
+  Udinese:
     "https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/Udinese_Calcio_logo.svg/1200px-Udinese_Calcio_logo.svg.png",
   "AS Roma":
     "https://upload.wikimedia.org/wikipedia/en/thumb/f/f7/AS_Roma_logo_%282017%29.svg/1200px-AS_Roma_logo_%282017%29.svg.png",
-  "Napoli":
+  Napoli:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/SSC_Neapel.svg/1200px-SSC_Neapel.svg.png",
-  "Fiorentina":
+  Fiorentina:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/2022_ACF_Fiorentina_logo.svg/1200px-2022_ACF_Fiorentina_logo.svg.png",
-  "Lazio":
+  Lazio:
     "https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/S.S._Lazio_badge.svg/1200px-S.S._Lazio_badge.svg.png",
-  "Monza":
+  Monza:
     "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/A.C._Monza_logo_%282019%29.svg/1200px-A.C._Monza_logo_%282019%29.svg.png",
-  "Juventus":
+  Juventus:
     "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Juventus_FC_2017_icon_%28black%29.svg/640px-Juventus_FC_2017_icon_%28black%29.svg.png",
   "AC Milan":
     "https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg",
-  "Sassuolo":
+  Sassuolo:
     "https://upload.wikimedia.org/wikipedia/en/thumb/1/1c/US_Sassuolo_Calcio_logo.svg/1200px-US_Sassuolo_Calcio_logo.svg.png",
-  "Wrexham":
+  Wrexham:
     "https://upload.wikimedia.org/wikipedia/en/3/3f/Wrexham_A.F.C._logo.png",
   "Sheffield United":
     "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Sheffield_United_FC_logo.svg/1200px-Sheffield_United_FC_logo.svg.png",
-  "AS Roma": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMMzn9cPtT-vACD4JGNwMA3vhJirHIGU47-cclikLobpiM7bJgHDWnDIEYuQ&amp;s", 
-  "FC Augsburg": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUiMm4zcKb4ow5iI4DYSUfu_mxkiOB2bfljFzazF3eiS0iZ44gmS3SaiAMm9Y&amp;s", 
-  "VfB Stuttgart": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPH90ZwxraSqht63j87UfYVCgxg2Cp4Rb8WhvfaepQ31qZJqCArfBm37WUbo&amp;s", 
-  "Borussia Dortmund": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHu49_T_tPiCdeC-l0sJxLQHnMmyoz9q4GfhSIXpsR8IAp3GqrzSRcnaiTZEY&amp;s", 
-  "Bayer Leverkusen": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Yvc6bUqgZE2pqfY8V0z64hUsL4YyZifFJYuaXL4nChv2AJJVottzKrjawA&amp;s", 
-  "Monza": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI9fg1V_3VmQObBWCjdwqVmbXSX0AN4ltGv7G6ou4gzNTz7LPhKSxqPuEGCvw&amp;s", 
-  "Juventus": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPbuNHDnUkVACZRY0THqz00At8WhEs1iRShC-fdO1-jY_2FnfLqS7kLhFUNg&amp;s", 
-  "Borussia Moenchengladbach": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQBxE2hiYwkcXPHmPYi5NH5ELDICuyxvXwWClfPeTTvb1o4PMMbZVoOsYm-Hw&amp;s", 
-  "Eintracht Frankfurt": 
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7t6-_5f5lcQzQabsLBGN2DJilR-oTupUIJ152dIltUzJzK24JoNJXtHqiVQ&amp;s", 
+  "FC Augsburg":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUiMm4zcKb4ow5iI4DYSUfu_mxkiOB2bfljFzazF3eiS0iZ44gmS3SaiAMm9Y&amp;s",
+  "VfB Stuttgart":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLPH90ZwxraSqht63j87UfYVCgxg2Cp4Rb8WhvfaepQ31qZJqCArfBm37WUbo&amp;s",
+  "Borussia Dortmund":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHu49_T_tPiCdeC-l0sJxLQHnMmyoz9q4GfhSIXpsR8IAp3GqrzSRcnaiTZEY&amp;s",
+  "Bayer Leverkusen":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4Yvc6bUqgZE2pqfY8V0z64hUsL4YyZifFJYuaXL4nChv2AJJVottzKrjawA&amp;s",
+  "Borussia Moenchengladbach":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQBxE2hiYwkcXPHmPYi5NH5ELDICuyxvXwWClfPeTTvb1o4PMMbZVoOsYm-Hw&amp;s",
+  "Eintracht Frankfurt":
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7t6-_5f5lcQzQabsLBGN2DJilR-oTupUIJ152dIltUzJzK24JoNJXtHqiVQ&amp;s",
 };

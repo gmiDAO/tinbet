@@ -37,7 +37,11 @@ const plugins = [
       webpack5: true,
       reactStrictMode: true,
       images: {
-        domains: ["upload.wikimedia.org", "lh3.googleusercontent.com"],
+        domains: [
+          "upload.wikimedia.org",
+          "lh3.googleusercontent.com",
+          "encrypted-tbn0.gstatic.com",
+        ],
       },
     },
   ],
