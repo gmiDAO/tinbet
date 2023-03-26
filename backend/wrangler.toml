@@ -18,6 +18,6 @@ queues.consumers = [
 crons = ["*/10 * * * *"]
 
 [vars]
-ANCHOR_PROVIDER_URL="https://winter-autumn-patina.solana-mainnet.discover.quiknode.pro/fed6b4e323812cf52dd88b0f41b204b51911a123/"
+ANCHOR_PROVIDER_URL="https://sleek-aged-tab.solana-mainnet.discover.quiknode.pro/cece1c411fd01b80e4696f74a775cc95b5854a51/"
 # ANCHOR_PROVIDER_URL="https://lingering-omniscient-choice.solana-mainnet.discover.quiknode.pro/cb8d910bf1854db2dc4c2e5a3333294e26ae0445/"
 PROTOCOL_TYPE="release"
